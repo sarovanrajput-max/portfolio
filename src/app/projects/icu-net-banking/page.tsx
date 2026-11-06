@@ -1,4 +1,3 @@
-"tsx"
 "use client";
 
 import React, { useState } from "react";
@@ -8,7 +7,6 @@ import { Terminal, Shield, Code, Server, Database, CheckCircle, RefreshCw, Cpu, 
 export default function ICUNetBankingDemo() {
   const [activeTab, setActiveTab] = useState<"pan" | "emi" | "rest" | "acl">("pan");
   
-  // Simulated Interactive State for PAN Verification Demo
   const [panInput, setPanInput] = useState("ABCDE1234F");
   const [verificationResult, setVerificationResult] = useState<{ status: string; message: string } | null>(null);
 
@@ -27,9 +25,27 @@ export default function ICUNetBankingDemo() {
     }
   };
 
+  const scriptCodeSnippet = `var ICUKYCService = Class.create();
+ICUKYCService.prototype = {
+    initialize: function() {},
+    validatePAN: function(panNumber) {
+        var panRegex = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
+        if (!panRegex.test(panNumber)) {
+            return { valid: false, error: "Invalid PAN format" };
+        }
+        var gr = new GlideRecord('x_1330921_icu_pan_registry');
+        gr.addQuery('pan_number', panNumber);
+        gr.query();
+        if (gr.next()) {
+            return { valid: true, holder: gr.getValue('registered_name') };
+        }
+        return { valid: false, error: "PAN not found in registry" };
+    },
+    type: 'ICUKYCService'
+};`;
+
   return (
     <main className="min-h-screen bg-slate-950 text-slate-100 flex flex-col">
-      {/* Top Navbar */}
       <header className="border-b border-slate-800 bg-slate-900/50 backdrop-blur px-6 py-4 flex justify-between items-center">
         <div className="flex items-center gap-4">
           <Link href="/projects" className="text-slate-400 hover:text-cyan-400 transition flex items-center gap-1 text-sm">
@@ -47,10 +63,7 @@ export default function ICUNetBankingDemo() {
         </div>
       </header>
 
-      {/* Main Split Workspace */}
       <div className="flex-1 grid grid-cols-1 lg:grid-cols-12 overflow-hidden">
-        
-        {/* LEFT SIDE: INTERACTIVE BANKING APPLICATION */}
         <div className="lg:col-span-6 border-r border-slate-800 p-6 flex flex-col bg-slate-900/30 overflow-y-auto">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-lg font-semibold text-cyan-300 flex items-center gap-2">
@@ -59,7 +72,6 @@ export default function ICUNetBankingDemo() {
             <span className="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded">Simulated UI</span>
           </div>
 
-          {/* Feature Navigation Tabs inside Demo */}
           <div className="flex flex-wrap gap-2 mb-6 border-b border-slate-800 pb-4">
             <button
               onClick={() => setActiveTab("pan")}
@@ -87,7 +99,6 @@ export default function ICUNetBankingDemo() {
             </button>
           </div>
 
-          {/* Dynamic Interactive Box */}
           <div className="bg-slate-950 border border-slate-800 rounded-xl p-6 flex-1 flex flex-col justify-between">
             {activeTab === "pan" && (
               <div className="space-y-4">
@@ -193,7 +204,6 @@ export default function ICUNetBankingDemo() {
           </div>
         </div>
 
-        {/* RIGHT SIDE: TECHNICAL IMPLEMENTATION EXPLANATION */}
         <div className="lg:col-span-6 p-6 flex flex-col bg-slate-950 overflow-y-auto">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-lg font-semibold text-emerald-400 flex items-center gap-2">
@@ -217,25 +227,7 @@ export default function ICUNetBankingDemo() {
                 <div className="bg-slate-900 border border-slate-800 p-4 rounded-xl space-y-2">
                   <h3 className="font-bold text-white text-xs uppercase tracking-wider text-cyan-400">Script Include: `ICUKYCService`</h3>
                   <pre className="bg-slate-950 p-3 rounded font-mono text-[11px] text-slate-300 overflow-x-auto">
-{var ICUKYCService = Class.create();
-ICUKYCService.prototype = {
-    initialize: function() {},
-    validatePAN: function(panNumber) {
-        var panRegex = /^[A-Z]{5}[0-9]{4}[A-Z]{1}$/;
-        if (!panRegex.test(panNumber)) {
-            return { valid: false, error: "Invalid PAN format" };
-        }
-        // Query simulated PAN Registry table
-        var gr = new GlideRecord('x_1330921_icu_pan_registry');
-        gr.addQuery('pan_number', panNumber);
-        gr.query();
-        if (gr.next()) {
-            return { valid: true, holder: gr.getValue('registered_name') };
-        }
-        return { valid: false, error: "PAN not found in registry" };
-    },
-    type: 'ICUKYCService'
-};}
+                    {scriptCodeSnippet}
                   </pre>
                 </div>
               </div>
@@ -264,7 +256,6 @@ ICUKYCService.prototype = {
             )}
           </div>
         </div>
-
       </div>
     </main>
   );
