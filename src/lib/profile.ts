@@ -49,7 +49,7 @@ export interface ProfileData {
   projects: Project[];
 }
 
-const internshipData = {
+const workData = {
   company: "Vyntra Pro Innovations",
   role: "ServiceNow Development Intern",
   duration: "May 2026 – October 2026",
@@ -81,8 +81,8 @@ export const PROFILE_DATA: ProfileData = {
     graduation: "2026",
     cgpa: "6.5"
   },
-  experience: internshipData,
-  internship: internshipData,
+  experience: workData,
+  internship: workData,
   projects: [
     {
       id: "icu-net-banking",
