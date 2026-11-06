@@ -16,6 +16,7 @@ export const PROFILE_DATA = {
   location: "New Delhi, India",
   email: "sarovanrajput@gmail.com",
   phone: "+91 8287041413",
+  statement: "Building intelligent applications, automating workflows and creating meaningful digital experiences.",
   education: {
     degree: "B.Tech in Computer Science & Engineering",
     university: "The NorthCap University, Gurugram",
@@ -88,10 +89,46 @@ export const PROFILE_DATA = {
 };
 
 export const profile = PROFILE_DATA;
+
 export const portals = [
-  { id: "identity", label: "Identity", path: "/about" },
-  { id: "projects", label: "Projects", path: "/projects" },
-  { id: "lab", label: "ServiceNow Lab", path: "/lab" },
-  { id: "journey", label: "Journey", path: "/journey" },
-  { id: "contact", label: "Contact", path: "/contact" }
+  { 
+    id: "identity", 
+    label: "MY IDENTITY", 
+    path: "/about", 
+    href: "/about",
+    color: "#00f0ff", 
+    blurb: "Professional background & experience" 
+  },
+  { 
+    id: "projects", 
+    label: "PROJECT UNIVERSE", 
+    path: "/projects", 
+    href: "/projects",
+    color: "#7000ff", 
+    blurb: "ICU Net Banking & Apps" 
+  },
+  { 
+    id: "lab", 
+    label: "SERVICENOW LAB", 
+    path: "/lab", 
+    href: "/lab",
+    color: "#00ffaa", 
+    blurb: "Interactive technical concepts" 
+  },
+  { 
+    id: "journey", 
+    label: "PROFESSIONAL JOURNEY", 
+    path: "/journey", 
+    href: "/journey",
+    color: "#ff00aa", 
+    blurb: "Vyntra internship & milestones" 
+  },
+  { 
+    id: "contact", 
+    label: "CONTACT", 
+    path: "/contact", 
+    href: "/contact",
+    color: "#ffaa00", 
+    blurb: "Get in touch & resume" 
+  }
 ];
