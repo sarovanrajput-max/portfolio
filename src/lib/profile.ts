@@ -39,8 +39,34 @@ export interface ProfileData {
     location: string;
     responsibilities: string[];
   };
+  internship: {
+    company: string;
+    role: string;
+    duration: string;
+    location: string;
+    responsibilities: string[];
+  };
   projects: Project[];
 }
+
+const internshipData = {
+  company: "Vyntra Pro Innovations",
+  role: "ServiceNow Development Intern",
+  duration: "May 2026 – October 2026",
+  location: "Remote / On-site",
+  responsibilities: [
+    "Administered and supported ServiceNow instances, including configuration, incident lifecycle tracking, and Update Set releases.",
+    "Automated business logic, field validation, and record creation using JavaScript Client Scripts and server-side Business Rules.",
+    "Worked extensively with g_form, g_user, GlideRecord, and gs.eventQueue.",
+    "Integrated ServiceNow with external services through REST APIs, exchanging JSON using REST Messages and server-side JavaScript.",
+    "Built branded Service Portals using Record Producers and AngularJS-based catalog widgets.",
+    "Configured Agent Workspaces for streamlined agent support workflows.",
+    "Implemented role-based security using Access Control Lists (ACLs) and script conditions to protect records and fields.",
+    "Configured SLAs, event triggers, and automated email notifications.",
+    "Developed custom scoped applications in ServiceNow Personal Developer Instances.",
+    "Migrated data through Excel Import Sets, Transform Maps, and Coalesce keys."
+  ]
+};
 
 export const PROFILE_DATA: ProfileData = {
   name: "sarovan chambyal",
@@ -55,24 +81,8 @@ export const PROFILE_DATA: ProfileData = {
     graduation: "2026",
     cgpa: "6.5"
   },
-  experience: {
-    company: "Vyntra Pro Innovations",
-    role: "ServiceNow Development Intern",
-    duration: "May 2026 – October 2026",
-    location: "Remote / On-site",
-    responsibilities: [
-      "Administered and supported ServiceNow instances, including configuration, incident lifecycle tracking, and Update Set releases.",
-      "Automated business logic, field validation, and record creation using JavaScript Client Scripts and server-side Business Rules.",
-      "Worked extensively with g_form, g_user, GlideRecord, and gs.eventQueue.",
-      "Integrated ServiceNow with external services through REST APIs, exchanging JSON using REST Messages and server-side JavaScript.",
-      "Built branded Service Portals using Record Producers and AngularJS-based catalog widgets.",
-      "Configured Agent Workspaces for streamlined agent support workflows.",
-      "Implemented role-based security using Access Control Lists (ACLs) and script conditions to protect records and fields.",
-      "Configured SLAs, event triggers, and automated email notifications.",
-      "Developed custom scoped applications in ServiceNow Personal Developer Instances.",
-      "Migrated data through Excel Import Sets, Transform Maps, and Coalesce keys."
-    ]
-  },
+  experience: internshipData,
+  internship: internshipData,
   projects: [
     {
       id: "icu-net-banking",
