@@ -1,10 +1,9 @@
-"tsx"
 "use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
 import { PROFILE_DATA } from "@/lib/profile";
-import { Terminal, Shield, Code, Server, ArrowRight, Layers } from "lucide-react";
+import { Terminal, ArrowRight } from "lucide-react";
 
 export default function ProjectsPage() {
   const [selectedFilter, setSelectedFilter] = useState<string>("All");
