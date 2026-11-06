@@ -10,7 +10,39 @@ export interface Project {
   highlights: string[];
 }
 
-export const PROFILE_DATA = {
+export interface Portal {
+  id: string;
+  label: string;
+  path: string;
+  href: string;
+  color: string;
+  blurb: string;
+}
+
+export interface ProfileData {
+  name: string;
+  title: string;
+  location: string;
+  email: string;
+  phone: string;
+  statement: string;
+  education: {
+    degree: string;
+    university: string;
+    graduation: string;
+    cgpa: string;
+  };
+  experience: {
+    company: string;
+    role: string;
+    duration: string;
+    location: string;
+    responsibilities: string[];
+  };
+  projects: Project[];
+}
+
+export const PROFILE_DATA: ProfileData = {
   name: "sarovan chambyal",
   title: "ServiceNow Developer",
   location: "New Delhi, India",
@@ -85,12 +117,12 @@ export const PROFILE_DATA = {
         "Designed daily step tracking and workout history analytics views."
       ]
     }
-  ] as Project[]
+  ]
 };
 
-export const profile = PROFILE_DATA;
+export const profile: ProfileData = PROFILE_DATA;
 
-export const portals = [
+export const portals: Portal[] = [
   { 
     id: "identity", 
     label: "MY IDENTITY", 
