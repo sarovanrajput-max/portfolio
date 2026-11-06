@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Terminal, Shield, Code, Server, Database, CheckCircle, RefreshCw, Cpu, ArrowLeft } from "lucide-react";
+import { Terminal, Shield, Code, Server, Database, Cpu, ArrowLeft } from "lucide-react";
 
 export default function ICUNetBankingDemo() {
   const [activeTab, setActiveTab] = useState<"pan" | "emi" | "rest" | "acl">("pan");
