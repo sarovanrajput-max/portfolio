@@ -86,3 +86,12 @@ export const PROFILE_DATA = {
     }
   ] as Project[]
 };
+
+export const profile = PROFILE_DATA;
+export const portals = [
+  { id: "identity", label: "Identity", path: "/about" },
+  { id: "projects", label: "Projects", path: "/projects" },
+  { id: "lab", label: "ServiceNow Lab", path: "/lab" },
+  { id: "journey", label: "Journey", path: "/journey" },
+  { id: "contact", label: "Contact", path: "/contact" }
+];
