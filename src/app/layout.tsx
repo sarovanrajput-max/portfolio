@@ -11,8 +11,8 @@ const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono"
 
 export const metadata: Metadata = {
   title: {
-    default: "Sarovan Chamgyal — ServiceNow Developer",
-    template: "%s · Sarovan Chamgyal",
+    default: "Sarovan Chambyal — ServiceNow Developer",
+    template: "%s · Sarovan Chambyal",
   },
   description: `${profile.name} is a ${profile.title}. ${profile.statement}`,
 };

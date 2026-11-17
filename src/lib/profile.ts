@@ -19,9 +19,18 @@ export interface Portal {
   blurb: string;
 }
 
+export interface SchoolRecord {
+  level: string;
+  school: string;
+  score: string;
+}
+
 export interface ProfileData {
   name: string;
   title: string;
+  specialization: string;
+  dob: string;
+  age: string;
   location: string;
   email: string;
   phone: string;
@@ -32,6 +41,7 @@ export interface ProfileData {
     graduation: string;
     cgpa: string;
   };
+  schooling: SchoolRecord[];
   experience: {
     company: string;
     role: string;
@@ -69,9 +79,12 @@ const workData = {
 };
 
 export const PROFILE_DATA: ProfileData = {
-  name: "sarovan chambyal",
+  name: "Sarovan Chambyal",
   title: "ServiceNow Developer",
-  location: "New Delhi, India",
+  specialization: "Full-Stack Development",
+  dob: "5 March 2005",
+  age: "21 years",
+  location: "Delhi, India",
   email: "sarovanrajput@gmail.com",
   phone: "+91 8287041413",
   statement: "Building intelligent applications, automating workflows and creating meaningful digital experiences.",
@@ -81,6 +94,10 @@ export const PROFILE_DATA: ProfileData = {
     graduation: "2026",
     cgpa: "6.5"
   },
+  schooling: [
+    { level: "Class 10", school: "Kendriya Vidyalaya, Dwarka Sector 5", score: "87%" },
+    { level: "Class 12", school: "Kendriya Vidyalaya, Dwarka Sector 5", score: "78%" }
+  ],
   experience: workData,
   internship: workData,
   projects: [
