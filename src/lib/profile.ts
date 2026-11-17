@@ -175,14 +175,6 @@ export const portals: Portal[] = [
     blurb: "Interactive technical concepts" 
   },
   { 
-    id: "journey", 
-    label: "PROFESSIONAL JOURNEY", 
-    path: "/journey", 
-    href: "/journey",
-    color: "#ff00aa", 
-    blurb: "Vyntra internship & milestones" 
-  },
-  { 
     id: "contact", 
     label: "CONTACT", 
     path: "/contact", 

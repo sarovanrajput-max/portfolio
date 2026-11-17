@@ -45,7 +45,7 @@ export function HomeExperience() {
         <h2 id="portals-heading" className="font-display text-2xl text-white sm:text-3xl">
           Choose a portal
         </h2>
-        <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {portals.map((p) => (
             <li key={p.id}>
               <Link
